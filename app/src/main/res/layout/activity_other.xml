@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="다른 화면으로 드러옴"
+        android:text="다른 화면으로 들어옴"
         android:textSize="25dp"/>
 
 </LinearLayout>
