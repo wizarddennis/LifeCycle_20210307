@@ -6,18 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.d("메인화면", "onCreate실행됨")
-
-        moveToOtherBtn.setOnClickListener {
-            val myIntent = Intent(this, OtherActivity::class.java)
-            startActivity(myIntent)
-
-        }      
+        setupEvents()
+        setValues()
         
     }
 
@@ -25,6 +20,19 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         
         Log.d("메인화면", "onResume실행됨")
+    }
+
+    override fun setupEvents() {
+        moveToOtherBtn.setOnClickListener {
+            val myIntent = Intent(this, OtherActivity::class.java)
+            startActivity(myIntent)
+
+        }
+    }
+
+    override fun setValues() {
+        Log.d("메인화면", "onCreate실행됨")
+
     }
 
     override fun onPause() {
